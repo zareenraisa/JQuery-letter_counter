@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Letter Counter</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<section id="text">
+	<h1 id="header">Enter Your Message</h1>
+	<textarea id="text_body"></textarea>
+	<p id="p">Characters Left:
+    <span id="p1"></span>
+	</p>
+</section>
+
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+
+		$(document).ready(function(){
+		
+			var max_char = 150;
+			
+			$('#text_body').keyup(function(){
+				var char_len = $('textarea').val().length;
+				var char_len = max_char-char_len;
+				$('#p1').text(char_len);
+
+				// if ( char_len >= 0 && char_len <= 150 ) 
+				// 	{
+				// 		$('#text_body').addClass('green');
+				// 		$('#text_body').removeClass('red');	
+				// 	}
+				// else
+				// 	{
+				// 		$('#text_body').addClass('red');
+				// 		$('#text_body').removeClass('green');
+				// 	}	
+			});
+			
+		});
+
+	
+</script>
+
+</body>
+</html>
